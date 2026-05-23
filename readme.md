@@ -3,7 +3,7 @@
 A responsive, high-performance single-page portfolio designed to showcase digital campaigns, social media strategies, and creative marketing projects. Built with a focus on clean UI, mobile responsiveness, and seamless user experience.
 
 ## 🔗 Live Demo
-[nanza.vercell.app]
+nanza.vercell.app
 
 ## 🛠️ Tech Stack
 * **Markup & Styling:** HTML5, CSS3 (Custom Variables, Flexbox, Grid)
