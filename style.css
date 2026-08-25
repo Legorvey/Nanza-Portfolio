@@ -1,13 +1,25 @@
 /* CSS Reset & Variables */
 :root {
+    /* Light Theme (Enhanced) */
     --bg-white: #FFFFFF;
-    --bg-cream: #FAF7F2;      
-    --primary-brown: #8A5A44;  
-    --light-brown: #B07D62;    
-    --soft-tan: #E6CCB2;       
-    --text-dark: #3D261C;      
-    --text-muted: #70584E;
+    --bg-cream: #FDF9F6;      
+    --primary-brown: #794A34;  
+    --light-brown: #A0694B;    
+    --soft-tan: #E3D1C3;       
+    --text-dark: #2A1A12;      
+    --text-muted: #5C463C;
     --radius-playful: 16px;    
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --bg-white: #120C0A; 
+    --bg-cream: #1A120E;      
+    --primary-brown: #D4A373; 
+    --light-brown: #E6CCB2;    
+    --soft-tan: #3D261C;       
+    --text-dark: #FDF9F6;      
+    --text-muted: #BFAEA8;
 }
 
 * {
@@ -21,11 +33,16 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--bg-white);
     overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
 }
 
 .container {
@@ -46,10 +63,11 @@ body {
 }
 
 .navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
+    background-color: color-mix(in srgb, var(--bg-white) 85%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--soft-tan);
-    box-shadow: 0 4px 20px rgba(138, 90, 68, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
 .nav-container {
@@ -250,12 +268,14 @@ section {
 }
 
 .about-card {
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(230, 204, 178, 0.3);
+    background-color: color-mix(in srgb, var(--bg-white) 75%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--soft-tan);
     border-radius: 30px;
     padding: 50px 40px;
-    box-shadow: 0 10px 40px rgba(138, 90, 68, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 .about-content {
@@ -536,6 +556,125 @@ section {
     visibility: visible;
     opacity: 1;
     bottom: 50px;
+}
+
+/* --- NEW FEATURES --- */
+
+/* Theme Toggle */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.theme-toggle:hover {
+    color: var(--primary-brown);
+    transform: rotate(15deg);
+}
+
+/* Project Filters */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+.filter-btn {
+    background-color: transparent;
+    color: var(--text-dark);
+    border: 1px solid var(--soft-tan);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--primary-brown);
+    color: var(--bg-white);
+    border-color: var(--primary-brown);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Project Hover Overlay */
+.project-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: color-mix(in srgb, var(--primary-brown) 85%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+.view-btn {
+    background-color: var(--bg-white);
+    color: var(--primary-brown);
+    padding: 10px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transform: translateY(20px);
+    transition: transform 0.4s ease, background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.project-card:hover .view-btn {
+    transform: translateY(0);
+}
+.view-btn:hover {
+    background-color: var(--text-dark);
+    color: var(--bg-white);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-brown);
+    color: var(--bg-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.back-to-top:hover {
+    background-color: var(--light-brown);
+    transform: translateY(-5px);
+}
+
+/* Fix hiding projects when filtered out */
+.project-card.hide {
+    display: none;
 }
 
 /* Responsive Overrides untuk Mobile */

@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nazwa Az Zahra - Creative Portfolio</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Nazwa Az Zahra, a passionate Creative Marketer and Content Strategist.">
+    <meta name="keywords" content="Nazwa Az Zahra, Creative Marketer, Content Strategist, Social Media, Portfolio">
+    <meta property="og:title" content="Nazwa Az Zahra - Creative Portfolio">
+    <meta property="og:description" content="Portfolio of Nazwa Az Zahra, a passionate Creative Marketer and Content Strategist.">
+    <meta property="og:type" content="website">
+    
     <link rel="icon" type="image/png" href="images/favicon.png">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="light">
+    <main>
 
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">Hello! ✨</a>
             <div class="nav-menu">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
                 <a href="https://www.linkedin.com/in/zahra-nazwa" target="_blank" class="nav-icon" aria-label="LinkedIn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
                 </a>
@@ -88,10 +106,23 @@
                 <h2>Selected Projects</h2>
                 <div class="title-line"></div>
             </div>
+            
+            <div class="project-filters" data-aos="fade-up" data-aos-delay="50">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="content">Content</button>
+                <button class="filter-btn" data-filter="campaign">Campaigns</button>
+            </div>
+
             <div class="project-grid">
                 
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-img"><img src="images/projects/mimu.jpg" alt="Matchachie MiMu"></div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="campaign">
+                    <div class="project-img">
+                        <img src="images/projects/mimu.jpg" alt="Matchachie MiMu" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="#projects" class="view-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3>Social Media Campaign: Matchachie “MiMu”</h3>
                         <p class="project-desc"><strong>Objective:</strong> Increase brand awareness and attract young urban consumers.</p>
@@ -102,8 +133,13 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-img"><img src="images/projects/ikom.jpg" alt="IKOM Channel"></div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="content">
+                    <div class="project-img">
+                        <img src="images/projects/ikom.jpg" alt="IKOM Channel" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="#projects" class="view-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3>Content Strategy: IKOM Channel</h3>
                         <p class="project-desc"><strong>Objective:</strong> Increase audience engagement through digital storytelling.</p>
@@ -114,8 +150,13 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-img"><img src="images/projects/mealth.jpg" alt="Mealth Wellness"></div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="marketing">
+                    <div class="project-img">
+                        <img src="images/projects/mealth.jpg" alt="Mealth Wellness" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="#projects" class="view-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3>Instagram Marketing Strategy: Mealth Wellness</h3>
                         <p class="project-desc"><strong>Objective:</strong> Increase digital visibility and improve audience interaction in the wellness market.</p>
@@ -126,8 +167,13 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-img"><img src="images/projects/opsy.jpg" alt="OPSY Store"></div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="marketing">
+                    <div class="project-img">
+                        <img src="images/projects/opsy.jpg" alt="OPSY Store" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="#projects" class="view-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3>E-Commerce & Retail Strategy: OPSY Store</h3>
                         <p class="project-desc"><strong>Objective:</strong> Scale online and offline business growth while increasing customer loyalty.</p>
@@ -138,8 +184,13 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-img"><img src="images/projects/kpm.jpg" alt="KPM Telkom University"></div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="content">
+                    <div class="project-img">
+                        <img src="images/projects/kpm.jpg" alt="KPM Telkom University" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="#projects" class="view-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3>Digital Communication: KPM Telkom University</h3>
                         <p class="project-desc"><strong>Objective:</strong> Support large-scale institutional communication and media publication.</p>
@@ -150,8 +201,13 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-img"><img src="images/projects/sdgs.jpg" alt="SDGs 7 Renewable Energy"></div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="campaign">
+                    <div class="project-img">
+                        <img src="images/projects/sdgs.jpg" alt="SDGs 7 Renewable Energy" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="#projects" class="view-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3>Community Campaign: SDGs 7 Renewable Energy</h3>
                         <p class="project-desc"><strong>Objective:</strong> Increase public awareness of renewable energy and sustainable village development.</p>
@@ -196,6 +252,12 @@
     </footer>
 
     <div id="toast" class="toast">Email Copied to Clipboard! ✅</div>
+
+    <a href="#" id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+    
+    </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
