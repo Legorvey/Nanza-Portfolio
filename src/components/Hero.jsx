@@ -50,21 +50,39 @@ const Hero = () => {
     }, []);
 
     return (
-        <header className="hero">
-            <div className="container" data-aos="fade-up">
-                <span className="hero-badge">Welcome to my creative space!</span>
-                <h1>Hi, I'm Nazwa Az Zahra!</h1>
-                <h2>A Passionate <span className="typed-text" ref={typedTextRef}></span><span className="cursor">&nbsp;</span></h2>
-                <p>Bringing energy, bold ideas, and data-driven strategies to shape impactful digital experiences.</p>
-                <a href="#projects" className="btn-primary">Explore My Works</a>
-            </div>
-            
-            <div className="wave-divider">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="shape-fill"></path>
-                </svg>
-            </div>
-        </header>
+        <div className="hero-scroll-container">
+            {/* Section 1: Welcome (100vh) */}
+            <section className="hero-section hero-welcome">
+                <div className="container" data-aos="fade-up" data-aos-duration="1200">
+                    <h1 className="welcome-text">Welcome to my Creative Space.</h1>
+                </div>
+                <div className="scroll-indicator">
+                    <span className="mouse">
+                        <span className="wheel"></span>
+                    </span>
+                </div>
+            </section>
+
+            {/* Section 2: Intro (100vh) */}
+            <section className="hero-section hero-intro">
+                <div className="container hero-content" data-aos="fade-up" data-aos-duration="1000">
+                    <div className="hero-text-wrapper">
+                        <h1 className="hero-title">
+                            Hi, I'm <span className="text-highlight">Nazwa Az Zahra</span>
+                        </h1>
+                        <h2 className="hero-subtitle">
+                            A Passionate <span className="typed-text" ref={typedTextRef}></span><span className="cursor">&nbsp;</span>
+                        </h2>
+                        <p className="hero-desc">
+                            Bringing energy, bold ideas, and data-driven strategies to shape impactful digital experiences with a touch of elegance.
+                        </p>
+                        <div className="hero-actions">
+                            <a href="#projects" className="btn-pastel">Explore My Works</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     );
 };
 

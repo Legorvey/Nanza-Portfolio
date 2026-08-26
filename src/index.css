@@ -136,99 +136,182 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--bg-white);
 }
 
-/* Hero Section */
-.hero {
+/* Scroll-Driven Hero Section */
+.hero-scroll-container {
+    background: linear-gradient(135deg, var(--bg-cream) 0%, #fef5f0 50%, #fdf9f6 100%);
+    width: 100%;
+}
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    padding-top: 180px;
-    padding-bottom: 160px; 
-    background-color: var(--bg-cream);
-    background-image: radial-gradient(var(--soft-tan) 1.5px, transparent 1.5px);
-    background-size: 25px 25px;
+    padding: 80px 20px;
     text-align: center;
 }
 
-.hero-badge {
-    display: inline-block;
-    background-color: var(--bg-white);
-    color: var(--primary-brown);
-    padding: 6px 16px;
-    border-radius: 30px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(138, 90, 68, 0.05);
+.hero-welcome {
+    z-index: 2;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
+.welcome-text {
+    font-size: 5rem;
+    font-weight: 700;
     color: var(--text-dark);
+    line-height: 1.1;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.hero h2 {
-    font-size: 1.6rem;
-    font-weight: 600;
+/* Mouse Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.7;
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid var(--primary-brown);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background-color: var(--primary-brown);
+    border-radius: 4px;
+    animation: scrollWheel 2s infinite;
+}
+
+@keyframes scrollWheel {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(15px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 0; }
+}
+
+.hero-intro {
+    background: linear-gradient(to top, var(--bg-white) 0%, transparent 100%);
+    z-index: 1;
+}
+
+/* Content Layout */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text-wrapper {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-pill-badge {
+    display: inline-block;
+    background-color: color-mix(in srgb, var(--bg-white) 70%, transparent);
     color: var(--primary-brown);
-    max-width: 700px;
-    margin: 0 auto 20px auto;
-    min-height: 40px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
 }
 
+.hero-title {
+    font-size: 4rem;
+    line-height: 1.1;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.text-highlight {
+    color: var(--primary-brown);
+    display: inline-block;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    min-height: 50px; /* Prevents layout jump while typing */
+}
+
+.hero-desc {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 650px;
+    line-height: 1.7;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Typing Effect Cursor */
 .cursor {
     display: inline-block;
     width: 3px;
     background-color: var(--primary-brown);
     animation: blink 1s infinite;
+    margin-left: 5px;
 }
+
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
 
-.hero p {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-    color: var(--text-muted);
+/* Pastel Button */
+.hero-actions {
+    margin-top: 25px;
 }
 
-.btn-primary {
+.btn-pastel {
     display: inline-block;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    padding: 16px 36px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-pastel:hover {
     background-color: var(--primary-brown);
     color: var(--bg-white);
-    padding: 14px 32px;
-    text-decoration: none;
-    border-radius: var(--radius-playful);
-    font-weight: bold;
-    box-shadow: 0 4px 14px rgba(138, 90, 68, 0.2);
-    transition: all 0.3s ease;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(138, 90, 68, 0.2);
+    border-color: var(--primary-brown);
 }
 
-.btn-primary:hover {
-    background-color: var(--light-brown);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(138, 90, 68, 0.3);
-}
-
-/* Wave Divider */
-.wave-divider {
+/* Clean Divider */
+.hero-fade-divider {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.wave-divider svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 60px;
-}
-
-.wave-divider .shape-fill {
-    fill: var(--bg-white);
+    height: 80px;
+    background: linear-gradient(to top, var(--bg-white) 0%, transparent 100%);
+    z-index: 2;
 }
 
 /* Sections Global */
