@@ -54,12 +54,10 @@ const Hero = () => {
             {/* Section 1: Welcome (100vh) */}
             <section className="hero-section hero-welcome">
                 <div className="container" data-aos="fade-up" data-aos-duration="1200">
-                    <h1 className="welcome-text">Welcome to my Creative Space.</h1>
-                </div>
-                <div className="scroll-indicator">
-                    <span className="mouse">
-                        <span className="wheel"></span>
-                    </span>
+                    <h1 className="welcome-text">
+                        <span className="welcome-line">Welcome to my</span>
+                        <span className="welcome-line">Creative Space.</span>
+                    </h1>
                 </div>
             </section>
 

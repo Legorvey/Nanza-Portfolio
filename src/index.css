@@ -158,46 +158,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .welcome-text {
-    font-size: 5rem;
+    font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 700;
     color: var(--text-dark);
-    line-height: 1.1;
-    max-width: 900px;
+    line-height: 1.15;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Mouse Scroll Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.7;
+.welcome-line {
+    display: block;
 }
 
-.mouse {
-    width: 30px;
-    height: 50px;
-    border: 2px solid var(--primary-brown);
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-}
 
-.wheel {
-    width: 4px;
-    height: 8px;
-    background-color: var(--primary-brown);
-    border-radius: 4px;
-    animation: scrollWheel 2s infinite;
-}
-
-@keyframes scrollWheel {
-    0% { transform: translateY(0); opacity: 1; }
-    50% { transform: translateY(15px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 0; }
-}
 
 .hero-intro {
     background: linear-gradient(to top, var(--bg-white) 0%, transparent 100%);
